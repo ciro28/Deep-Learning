@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using System.Timers;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -42,6 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public GameObject crawler;
         // Use this for initialization
         private void Start()
         {
@@ -174,10 +176,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_FootstepSounds[0] = m_AudioSource.clip;
         }
 
+        int i = 1;
 
         private void UpdateCameraPosition(float speed)
         {
             Vector3 newCameraPosition;
+
             if (!m_UseHeadBob)
             {
                 return;
@@ -195,10 +199,49 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 newCameraPosition = m_Camera.transform.localPosition;
                 newCameraPosition.y = m_OriginalCameraPosition.y - m_JumpBob.Offset();
             }
+            // Debug.Log("x: " + newCameraPosition.x);
+            // Debug.Log("y: " + newCameraPosition.y);
+            // Debug.Log("z: " + newCameraPosition.z);
+            // Debug.Log(newCameraPosition);
             m_Camera.transform.localPosition = newCameraPosition;
+            
+            //GameObject a = Instantiate(crawler) as GameObject;
+            //a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+            //a.transform.Rotate(0,180,0);
+            //a.transform.position = new Vector3(newCameraPosition.x - 1.5f, 0.02f, 0.46f);
+
+            Debug.Log("DIO");
+            System.Threading.Timer timer = null; 
+            timer = new System.Threading.Timer((obj) =>
+            {
+                
+                if(i == 1) {
+                    Debug.Log("PORCO");
+                    i = 2;
+                    //a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+                    //a.transform.Rotate(0,90,0);
+                    // a.transform.position = new Vector3(newCameraPosition.x - 1.5f, 0.02f, 0.46f);  
+                } 
+                timer.Dispose();
+            }, 
+            null, 3000, System.Threading.Timeout.Infinite);
+
+            Debug.Log("SPAWN i = " + i);
+            if(i == 2) {
+                Debug.Log("SPAWN 2 i = " + i);
+                Invoke("spawnCrawler", 2);
+                i = 3;
+            }
         }
 
-
+        void spawnCrawler()
+        {
+            // Instantiate(crawler, new Vector3(m_Camera.transform.position.x - 1.5f ,  0.02f, 0.46f), Quaternion.identity);
+            GameObject a = Instantiate(crawler) as GameObject;
+            a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+            a.transform.Rotate(0,180,0);
+            a.transform.position = new Vector3(m_Camera.transform.position.x - 3f, 0.02f, 0.46f);
+        }
         private void GetInput(out float speed)
         {
             // Read input
