@@ -236,11 +236,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         void spawnCrawler()
         {
-            // Instantiate(crawler, new Vector3(m_Camera.transform.position.x - 1.5f ,  0.02f, 0.46f), Quaternion.identity);
+            // 0.02f tocca il suolo
             GameObject a = Instantiate(crawler) as GameObject;
             a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
             a.transform.Rotate(0,180,0);
-            a.transform.position = new Vector3(m_Camera.transform.position.x - 3f, 0.02f, 0.46f);
+            a.transform.position = new Vector3(m_Camera.transform.position.x - 3f, 0.5f, 0.46f);
         }
         private void GetInput(out float speed)
         {
