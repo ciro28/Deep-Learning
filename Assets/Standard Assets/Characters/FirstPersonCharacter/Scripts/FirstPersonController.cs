@@ -236,7 +236,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         void spawnCrawler()
         {
-            // 0.02f tocca il suolo
+            // 0.02f tocca il suolo 0.01f
             GameObject a = Instantiate(crawler) as GameObject;
             a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
             a.transform.Rotate(0,180,0);
