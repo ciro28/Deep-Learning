@@ -17,8 +17,8 @@ $RECYCLE.BIN/
 log.txt
 npm-debug.log*
 
-/Temp
 /Library
+/Temp
 /Logs
 /obj
 
