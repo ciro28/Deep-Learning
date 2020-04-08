@@ -63,6 +63,7 @@
      <None Include="Assets\SPACE-MARS\shaders\props shaders\grunt_world_space_automap_lightmap.shader" />
      <None Include="Assets\NatureStarterKit2\info.txt" />
      <None Include="Assets\Fabric\Readme.txt" />
+     <None Include="Assets\Butterfly (Animated)\Butterfly (Animated).txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Sorrentinoo Andrea/Desktop/Deep-Learning/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
