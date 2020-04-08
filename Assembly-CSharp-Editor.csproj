@@ -70,6 +70,7 @@
      <Compile Include="Assets\Editor\ImageEffects\SunShaftsEditor.cs" />
      <Compile Include="Assets\Editor\ImageEffects\TonemappingEditor.cs" />
      <Compile Include="Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
+     <Compile Include="Assets\SlimUI\Modern Menu 1\Editor\SlimUIWindow.cs" />
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>C:/Users/Sorrentinoo Andrea/Desktop/Deep-Learning/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
