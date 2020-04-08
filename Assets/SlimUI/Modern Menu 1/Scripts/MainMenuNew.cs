@@ -92,10 +92,16 @@ namespace SlimUI.ModernMenu{
 		}
 
 		public void NewGame(){
-			if(sceneName != ""){
-				StartCoroutine(LoadAsynchronously(sceneName));
-				//SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-			}
+			// 0 Menu
+			// 1 Scena Horror ospedale
+			// 2 Scena natura
+			// 3 scena spazio
+			Debug.Log(sceneName);
+			
+			// StartCoroutine(LoadAsynchronously(sceneName));
+			// SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+			SceneManager.LoadScene(1);
+			
 		}
 
 		public void  DisablePlayCampaign (){
