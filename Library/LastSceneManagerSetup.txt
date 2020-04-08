@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Horror Hospital Pack/HorroHospital.unity
+- path: Assets/Almgp_automapping_shader/scene/auto_uv_blend_preview.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
