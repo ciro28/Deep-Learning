@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FlickeringLight.cs" />
      <Compile Include="Assets\SCL_ClientSocketHandler.cs" />
      <Compile Include="Assets\SCL_PositionalControllerInput.cs" />
      <Compile Include="Assets\SCL_SocketServer.cs" />
