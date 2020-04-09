@@ -4,6 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 using System.Timers;
+using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -235,13 +236,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
         void spawnCrawler()
-        {
+        {	
+			Debug.Log("SONO spawnCrawler");
+			Debug.Log("Index: " + SceneManager.GetActiveScene().buildIndex);
+			
+			if(SceneManager.GetActiveScene().buildIndex == 1) {
+				
             // 0.02f tocca il suolo 0.01f
             GameObject a = Instantiate(crawler) as GameObject;
             a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
             a.transform.Rotate(0,180,0);
             a.transform.position = new Vector3(m_Camera.transform.position.x - 3f, 0.5f, 0.46f);
+			} else {
+				Debug.Log("NON SONO la scena horror");
+			}
         }
+
         private void GetInput(out float speed)
         {
             // Read input

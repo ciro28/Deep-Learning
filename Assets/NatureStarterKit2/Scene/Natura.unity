@@ -35856,6 +35856,11 @@ PrefabInstance:
       propertyPath: m_WalkSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1660024697681545668, guid: 0a129567a63233344b6f3d23f4dc8667,
+        type: 3}
+      propertyPath: crawler
+      value: 
+      objectReference: {fileID: 138252, guid: be999fe03c257ec4cb0a3a4b5ca72217, type: 3}
     m_RemovedComponents:
     - {fileID: 1660024696298783596, guid: 0a129567a63233344b6f3d23f4dc8667, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a129567a63233344b6f3d23f4dc8667, type: 3}
