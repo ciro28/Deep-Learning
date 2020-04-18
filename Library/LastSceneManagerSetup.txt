@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Spazio_Marte/Space.unity
+- path: Assets/Horror Hospital Pack/HorroHospital.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
