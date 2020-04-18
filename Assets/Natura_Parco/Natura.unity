@@ -35927,6 +35927,11 @@ PrefabInstance:
       propertyPath: crawler
       value: 
       objectReference: {fileID: 138252, guid: be999fe03c257ec4cb0a3a4b5ca72217, type: 3}
+    - target: {fileID: 4965442227334362356, guid: 0a129567a63233344b6f3d23f4dc8667,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 99cefb282c5e5ec4eb5b28c1f0e21672, type: 3}
     m_RemovedComponents:
     - {fileID: 1660024696298783596, guid: 0a129567a63233344b6f3d23f4dc8667, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a129567a63233344b6f3d23f4dc8667, type: 3}
