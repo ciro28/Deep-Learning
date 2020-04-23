@@ -55,18 +55,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FlickeringLight.cs" />
      <Compile Include="Assets\Menu\Modern Menu 1\Scripts\CheckMusicVolume.cs" />
      <Compile Include="Assets\Menu\Modern Menu 1\Scripts\CheckSFXVolume.cs" />
      <Compile Include="Assets\Menu\Modern Menu 1\Scripts\MainMenuNew.cs" />
      <Compile Include="Assets\Menu\Modern Menu 1\Scripts\OptionsMenuNew.cs" />
      <Compile Include="Assets\Menu\Modern Menu 1\Scripts\ResetDemo.cs" />
-     <Compile Include="Assets\SCL_ClientSocketHandler.cs" />
-     <Compile Include="Assets\SCL_PositionalControllerInput.cs" />
-     <Compile Include="Assets\SCL_SocketServer.cs" />
      <Compile Include="Assets\Spazio_Marte\Planet Earth Free\SpinFree.cs" />
-     <Compile Include="Assets\control.cs" />
-     <Compile Include="Assets\wasd.cs" />
+     <Compile Include="Assets\global-script\FlickeringLight.cs" />
+     <Compile Include="Assets\global-script\SCL_ClientSocketHandler.cs" />
+     <Compile Include="Assets\global-script\SCL_PositionalControllerInput.cs" />
+     <Compile Include="Assets\global-script\SCL_SocketServer.cs" />
+     <Compile Include="Assets\global-script\control.cs" />
+     <Compile Include="Assets\global-script\wasd.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

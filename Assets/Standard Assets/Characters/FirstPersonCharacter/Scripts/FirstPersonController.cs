@@ -211,13 +211,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             //a.transform.Rotate(0,180,0);
             //a.transform.position = new Vector3(newCameraPosition.x - 1.5f, 0.02f, 0.46f);
 
-            Debug.Log("DIO");
             System.Threading.Timer timer = null; 
             timer = new System.Threading.Timer((obj) =>
             {
                 
                 if(i == 1) {
-                    Debug.Log("PORCO");
                     i = 2;
                     //a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
                     //a.transform.Rotate(0,90,0);
