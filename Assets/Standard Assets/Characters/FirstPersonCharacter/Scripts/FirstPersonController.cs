@@ -226,9 +226,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     break;
                 case "happy":
                     Debug.Log("PERSON sono felice");
-                    if(!crawlerSpown) {
-                        Invoke("spawnCrawler", 2);
-                    }
+                    Invoke("spawnCrawler", 2);
                     break;
                 case "neutral":
                     Debug.Log("PERSON sono neutro");
@@ -240,10 +238,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     break;
                 case "surprise":
                     Debug.Log("PERSON sono sorpreso");
-                    if (!crawlerSpown)
-                    {
-                        Invoke("spawnCrawler", 2);
-                    }
+                    Invoke("spawnCrawler", 2);
                     break;
                 case "angry":
                     Debug.Log("PERSON sono arrabbiato");
@@ -264,17 +259,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			Debug.Log("Index: " + SceneManager.GetActiveScene().buildIndex);
 			
 			if(SceneManager.GetActiveScene().buildIndex == 1) {
+                if(!crawlerSpown)
+                {
+                    crawlerSpown = true;
 
-            crawlerSpown = true;
-
-            // 0.02f tocca il suolo 0.01f
-            GameObject a = Instantiate(crawler) as GameObject;
-            a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
-            a.transform.Rotate(0,180,0);
-            a.transform.position = new Vector3(m_Camera.transform.position.x - 3f, 0.5f, 0.46f);
-			} else {
+                    // 0.02f tocca il suolo 0.01f
+                    GameObject a = Instantiate(crawler) as GameObject;
+                    a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+                    a.transform.Rotate(0,180,0);
+                    a.transform.position = new Vector3(m_Camera.transform.position.x - 3f, 0.5f, 0.46f);
+                }
+            } else {
 				Debug.Log("NON SONO la scena horror");
-			}
+
+                SceneManager.LoadScene(1);
+            }
         }
 
         private void GetInput(out float speed)
