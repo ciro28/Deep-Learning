@@ -11,9 +11,9 @@ namespace SlimUI.ModernMenu{
 
 		[Header("Loaded Scene")]
 		[Tooltip("The name of the scene in the build settings that will load")]
-		public string sceneName = ""; 
-
-		[Header("Panels")]
+		public string sceneName = "";
+   
+        [Header("Panels")]
 		[Tooltip("The UI Panel parenting all sub menus")]
 		public GameObject mainCanvas;
 		[Tooltip("The UI Panel that holds the CONTROLS window tab")]
@@ -74,7 +74,47 @@ namespace SlimUI.ModernMenu{
 			CameraObject = transform.GetComponent<Animator>();
 		}
 
-		public void  PlayCampaign (){
+        // Update is called once per frame
+        private void Update()
+        {
+            Debug.Log("Update() mex: " + SCL_PositionalControllerInput.emozione);
+
+            switch (SCL_PositionalControllerInput.emozione)
+            {
+                case "sad":
+                    Debug.Log("sono triste");
+                    SceneManager.LoadScene(2);
+                    break;
+                case "happy":
+                    Debug.Log("sono felice");
+                    SceneManager.LoadScene(1);
+                    break;
+                case "neutral":
+                    Debug.Log("sono neutro");
+                    SceneManager.LoadScene(3);
+                    break;
+                case "fear":
+                    Debug.Log("ho paura");
+                    SceneManager.LoadScene(2);
+                    break;
+                case "surprise":
+                    Debug.Log("sono sorpreso");
+                    SceneManager.LoadScene(1);
+                    break;
+                case "angry":
+                    Debug.Log("sono arrabbiato");
+                    SceneManager.LoadScene(2);
+                    break;
+                case "noface":
+                    Debug.Log("no face found");
+                    break;
+                default:
+                    Debug.Log("(default) sono neutro: " + SCL_PositionalControllerInput.emozione);
+                    break;
+            }
+        }
+  
+        public void  PlayCampaign (){
 			exitMenu.gameObject.SetActive(false);
 			playMenu.gameObject.SetActive(true);
 		}

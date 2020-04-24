@@ -8,7 +8,8 @@ using SlimUI.ModernMenu;
 
 public class SCL_PositionalControllerInput : MonoBehaviour, SCL_IClientSocketHandlerDelegate {
 
-	public GameObject controlledObject;
+    public static string emozione = "noface";
+    public GameObject controlledObject;
     public GameObject menu;
 
     private readonly object positionLock = new object();
@@ -60,42 +61,9 @@ public class SCL_PositionalControllerInput : MonoBehaviour, SCL_IClientSocketHan
         // 1 Scena Horror ospedale
         // 2 Scena natura
         // 3 scena spazio
-   
-        switch (message.Trim().ToLower())
-        {
-            case "sad":
-                Debug.Log("sono triste");
-                SceneManager.LoadScene(2);
-                break;
-            case "happy":
-                Debug.Log("sono felice");
-                menu.GetComponent<MainMenuNew>().NewGame();
-                // SceneManager.LoadScene(1);
-                break;
-            case "neutral":
-                Debug.Log("sono neutro");
-                SceneManager.LoadScene(3);
-                break;
-            case "fear":
-                Debug.Log("ho paura");
-                SceneManager.LoadScene(2);
-                break;
-            case "surprise":
-                Debug.Log("sono sorpreso");
-                SceneManager.LoadScene(1);
-                break;
-            case "angry":
-                Debug.Log("sono arrabbiato");
-                SceneManager.LoadScene(2);
-                break;
-            case "noface":
-                Debug.Log("no face found");
-                break;
-            default:
-                Debug.Log("(default) sono neutro: " + message);
-                break;
-        }
 
+        SCL_PositionalControllerInput.emozione = message.Trim().ToLower();
+ 
     }
 
 
