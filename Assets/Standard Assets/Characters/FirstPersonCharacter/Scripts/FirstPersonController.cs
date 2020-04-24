@@ -47,6 +47,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
 
         public GameObject crawler;
+        private Boolean crawlerSpown = false;
   
         // Use this for initialization
         private void Start()
@@ -225,7 +226,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     break;
                 case "happy":
                     Debug.Log("PERSON sono felice");
-                    Invoke("spawnCrawler", 2);
+                    if(!crawlerSpown) {
+                        Invoke("spawnCrawler", 2);
+                    }
                     break;
                 case "neutral":
                     Debug.Log("PERSON sono neutro");
@@ -237,7 +240,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     break;
                 case "surprise":
                     Debug.Log("PERSON sono sorpreso");
-                    Invoke("spawnCrawler", 2);
+                    if (!crawlerSpown)
+                    {
+                        Invoke("spawnCrawler", 2);
+                    }
                     break;
                 case "angry":
                     Debug.Log("PERSON sono arrabbiato");
@@ -258,7 +264,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			Debug.Log("Index: " + SceneManager.GetActiveScene().buildIndex);
 			
 			if(SceneManager.GetActiveScene().buildIndex == 1) {
-				
+
+            crawlerSpown = true;
+
             // 0.02f tocca il suolo 0.01f
             GameObject a = Instantiate(crawler) as GameObject;
             a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
