@@ -5,6 +5,7 @@ using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 using System.Timers;
 using UnityEngine.SceneManagement;
+using static SCL_PositionalControllerInput;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -46,9 +47,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
 
         public GameObject crawler;
+  
         // Use this for initialization
         private void Start()
         {
+
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -213,25 +216,39 @@ namespace UnityStandardAssets.Characters.FirstPerson
             //a.transform.Rotate(0,180,0);
             //a.transform.position = new Vector3(newCameraPosition.x - 1.5f, 0.02f, 0.46f);
 
-            System.Threading.Timer timer = null; 
-            timer = new System.Threading.Timer((obj) =>
+			Debug.Log("FIRST PERSON Update() mex: " + SCL_PositionalControllerInput.emozione);
+            switch (SCL_PositionalControllerInput.emozione)
             {
-                
-                if(i == 1) {
-                    i = 2;
-                    //a.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
-                    //a.transform.Rotate(0,90,0);
-                    // a.transform.position = new Vector3(newCameraPosition.x - 1.5f, 0.02f, 0.46f);  
-                } 
-                timer.Dispose();
-            }, 
-            null, 3000, System.Threading.Timeout.Infinite);
-
-            Debug.Log("SPAWN i = " + i);
-            if(i == 2) {
-                Debug.Log("SPAWN 2 i = " + i);
-                Invoke("spawnCrawler", 2);
-                i = 3;
+                case "sad":
+                    Debug.Log("PERSON sono triste");
+                    SceneManager.LoadScene(2);
+                    break;
+                case "happy":
+                    Debug.Log("PERSON sono felice");
+                    Invoke("spawnCrawler", 2);
+                    break;
+                case "neutral":
+                    Debug.Log("PERSON sono neutro");
+                    SceneManager.LoadScene(3);
+                    break;
+                case "fear":
+                    Debug.Log("PERSON ho paura");
+                    SceneManager.LoadScene(2);
+                    break;
+                case "surprise":
+                    Debug.Log("PERSON sono sorpreso");
+                    Invoke("spawnCrawler", 2);
+                    break;
+                case "angry":
+                    Debug.Log("PERSON sono arrabbiato");
+                    SceneManager.LoadScene(2);
+                    break;
+                case "noface":
+                    Debug.Log("PERSON no face found");
+                    break;
+                default:
+                    Debug.Log("(default) sono neutro: " + SCL_PositionalControllerInput.emozione);
+                    break;
             }
         }
 

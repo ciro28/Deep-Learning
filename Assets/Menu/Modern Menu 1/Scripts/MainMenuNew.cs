@@ -77,7 +77,7 @@ namespace SlimUI.ModernMenu{
         // Update is called once per frame
         private void Update()
         {
-            Debug.Log("Update() mex: " + SCL_PositionalControllerInput.emozione);
+            Debug.Log("Menu Update() mex: " + SCL_PositionalControllerInput.emozione);
 
             switch (SCL_PositionalControllerInput.emozione)
             {
