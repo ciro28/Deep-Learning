@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AllinOne\Cameraswitch.cs" />
      <Compile Include="Assets\AllinOne\Script\SkyBoxScript.cs" />
      <Compile Include="Assets\Menu\Modern Menu 1\Scripts\CheckMusicVolume.cs" />
      <Compile Include="Assets\Menu\Modern Menu 1\Scripts\CheckSFXVolume.cs" />

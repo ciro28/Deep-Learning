@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - crawler
+  - cam1
+  - cam2
   layers:
   - Default
   - TransparentFX
