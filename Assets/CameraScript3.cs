@@ -2,53 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraSwitch2 : MonoBehaviour
+public class CameraScript3 : MonoBehaviour
 {
 
     public GameObject cameraOspedale;
-    public GameObject cameraNatura;
     public GameObject cameraSpazio;
+       public GameObject cameraNatura;
+       public int cameraPositionCounter;
 
     AudioListener cameraOspedaleAudioLis;
-    AudioListener cameraNaturaAudioLis;
     AudioListener cameraSpazioAudioLis;
-
-    // Use this for initialization
+    AudioListener cameraNaturaAudioLis;
+  
+  
+    // Start is called before the first frame update
     void Start()
     {
+                //Get Camera Listeners
 
-        //Get Camera Listeners
+                  
         cameraOspedaleAudioLis = cameraOspedale.GetComponent<AudioListener>();
-        cameraNaturaAudioLis = cameraNatura.GetComponent<AudioListener>();
         cameraSpazioAudioLis = cameraSpazio.GetComponent<AudioListener>();
-
+        cameraNaturaAudioLis = cameraNatura.GetComponent<AudioListener>();
         //Camera Position Set
-        cameraPositionChange(PlayerPrefs.GetInt("CameraPosition"));
-
-
+        cameraPositionChange(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Change Camera Keyboard
         switchCamera();
     }
 
-    //UI JoyStick Method
-    public void cameraPositonM1()
-    {
-        cameraChangeCounter1();
+     public void cameraPositonM()
+    {      cameraChangeCounter0();
+           cameraChangeCounter1();
+           cameraChangeCounter2();
     }
 
-    public void cameraPositonM2()
-    {
-        cameraChangeCounter2();
-    }
 
-    //Change Camera Keyboard
-    void switchCamera()
-    {
+      void switchCamera()
+    { 
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            cameraChangeCounter0();
+        }
         if (Input.GetKeyDown(KeyCode.N))
         {
             cameraChangeCounter1();
@@ -59,23 +57,29 @@ public class CameraSwitch2 : MonoBehaviour
         }
     }
 
-    //Camera Counter
-    void cameraChangeCounter1()
+ void cameraChangeCounter0()
     {
-        int cameraPositionCounter = PlayerPrefs.GetInt("CameraPosition");
-        cameraPositionCounter++;
+        cameraPositionCounter = PlayerPrefs.GetInt("CameraPosition");
+        cameraPositionCounter=0;
         cameraPositionChange(cameraPositionCounter);
     }
 
-    void cameraChangeCounter2()
+     void cameraChangeCounter1()
     {
-        int cameraPositionCounter = PlayerPrefs.GetInt("CameraPosition");
-        cameraPositionCounter = cameraPositionCounter + 2;
+        cameraPositionCounter = PlayerPrefs.GetInt("CameraPosition");
+        cameraPositionCounter=1;
         cameraPositionChange(cameraPositionCounter);
     }
 
-    //Camera change Logic
-    void cameraPositionChange(int camPosition)
+void cameraChangeCounter2()
+    {
+        cameraPositionCounter = PlayerPrefs.GetInt("CameraPosition");
+        cameraPositionCounter=2;
+        
+        cameraPositionChange(cameraPositionCounter);
+    }
+
+     void cameraPositionChange(int camPosition)
     {
         if (camPosition > 2)
         {
@@ -91,40 +95,37 @@ public class CameraSwitch2 : MonoBehaviour
             cameraOspedale.SetActive(true);
             cameraOspedaleAudioLis.enabled = true;
 
+            cameraSpazioAudioLis.enabled = false;
+            cameraSpazio.SetActive(false);
+             
+              cameraNatura.SetActive(false);
             cameraNaturaAudioLis.enabled = false;
-            cameraNatura.SetActive(false);
-
-            cameraSpazioAudioLis.enabled = false;
-            cameraSpazio.SetActive(false);
         }
-
-        if (camPosition == 1)
-        {
-            cameraNatura.SetActive(true);
-            cameraNaturaAudioLis.enabled = true;
-
-            cameraOspedaleAudioLis.enabled = false;
-            cameraOspedale.SetActive(false);
-
-            cameraSpazioAudioLis.enabled = false;
-            cameraSpazio.SetActive(false);
-        }
-
 
         //Set camera position 2
-        if (camPosition == 2)
+        if (camPosition == 1)
+        {
+              cameraNatura.SetActive(true);
+            cameraNaturaAudioLis.enabled = true;
+            cameraSpazio.SetActive(false);
+            cameraSpazioAudioLis.enabled = false;
+
+            cameraOspedaleAudioLis.enabled = false;
+           cameraOspedale.SetActive(false);
+        }
+
+          if (camPosition == 2)
         {
             cameraSpazio.SetActive(true);
             cameraSpazioAudioLis.enabled = true;
 
             cameraOspedaleAudioLis.enabled = false;
-            cameraOspedale.SetActive(false);
-
-            cameraNaturaAudioLis.enabled = false;
+           cameraOspedale.SetActive(false);
             cameraNatura.SetActive(false);
-
+            cameraNaturaAudioLis.enabled = false;
         }
 
     }
 }
-}
+
+
