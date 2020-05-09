@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraScript3 : MonoBehaviour {
-   
-	public Material skySpazio;
-	public Material skyNatura;
-   
 
-   
+    public Material skySpazio;
+    public Material skyNatura;
+
     public GameObject Natura;
     public GameObject OspedaleMain;
     public GameObject Spazio;
@@ -32,6 +30,12 @@ public class CameraScript3 : MonoBehaviour {
         cameraNaturaAudioLis = cameraNatura.GetComponent<AudioListener> ();
         //Camera Position Set
         cameraPositionChange (0);
+
+        //Start on hospital with other scenes deactivated
+        OspedaleMain.SetActive (true);
+        Spazio.SetActive (false);
+        Natura.SetActive (false);
+
     }
 
     // Update is called once per frame
@@ -109,13 +113,12 @@ public class CameraScript3 : MonoBehaviour {
 
             cameraOspedaleAudioLis.enabled = false;
             cameraOspedale.SetActive (false);
-    
+
             Natura.SetActive (true);
             OspedaleMain.SetActive (false);
             Spazio.SetActive (false);
 
-
-             RenderSettings.skybox = skyNatura;
+            RenderSettings.skybox = skyNatura;
         }
 
         if (camPosition == 2) {
@@ -124,6 +127,7 @@ public class CameraScript3 : MonoBehaviour {
 
             cameraOspedaleAudioLis.enabled = false;
             cameraOspedale.SetActive (false);
+
             cameraNatura.SetActive (false);
             cameraNaturaAudioLis.enabled = false;
 
@@ -131,7 +135,7 @@ public class CameraScript3 : MonoBehaviour {
             OspedaleMain.SetActive (false);
             Natura.SetActive (false);
 
-             RenderSettings.skybox = skySpazio;
+            RenderSettings.skybox = skySpazio;
         }
 
     }
