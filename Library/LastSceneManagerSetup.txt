@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Natura_Parco/Natura.unity
+- path: Assets/DeepLearning/Ospedale/ospedale.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
