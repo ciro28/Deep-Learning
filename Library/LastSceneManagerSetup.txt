@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/AllinOne/Scene.unity
+- path: Assets/AllinOne/DeepLearning_EmotionRekog.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
