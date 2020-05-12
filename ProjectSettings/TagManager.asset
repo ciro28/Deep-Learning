@@ -5,9 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - crawler
-  - cam1
-  - cam2
-  - cam3
   layers:
   - Default
   - TransparentFX
@@ -17,8 +14,8 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Layer2
+  - 
+  - 
   - 
   - 
   - 
@@ -44,7 +41,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: layer2
-    uniqueID: 2875448861
     locked: 0
