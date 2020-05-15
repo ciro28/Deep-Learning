@@ -58,6 +58,8 @@
      <Compile Include="Assets\DeepLearning\Script\CameraScript3.cs" />
      <Compile Include="Assets\DeepLearning\Script\ChangeImage.cs" />
      <Compile Include="Assets\DeepLearning\Script\Spown.cs" />
+     <Compile Include="Assets\DeepLearning\Script\SpownNatura.cs" />
+     <Compile Include="Assets\DeepLearning\Script\SpownSpazio.cs" />
      <Compile Include="Assets\Menu\Modern Menu 1\Scripts\CheckMusicVolume.cs" />
      <Compile Include="Assets\Menu\Modern Menu 1\Scripts\CheckSFXVolume.cs" />
      <Compile Include="Assets\Menu\Modern Menu 1\Scripts\MainMenuNew.cs" />
@@ -78,6 +80,7 @@
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\PM_VoyagerTurretPack\READ ME!.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
