@@ -12,12 +12,14 @@ public class SpownSpazio : MonoBehaviour {
     public Transform parent;
 
     void Update () {
-        if (Input.GetKeyDown (KeyCode.Mouse0)) {
-            spawnLeft ();
-
-        }
-        if (Input.GetKeyDown (KeyCode.Mouse1)) {
+        if (Input.GetKeyDown (KeyCode.Mouse1) || SCL_PositionalControllerInputDirections.direzione == "left") {
             spawnRight ();
+            SCL_PositionalControllerInputDirections.direzione = "central";
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0) || SCL_PositionalControllerInputDirections.direzione == "right")
+        {
+            spawnLeft();
+            SCL_PositionalControllerInputDirections.direzione = "central";
         }
     }
 
